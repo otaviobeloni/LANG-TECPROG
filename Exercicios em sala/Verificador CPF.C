@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-void MultDigito(int dig, int valor){
+int MultDigito(int dig, int valor){
 	return dig*valor;	
 }
 
@@ -24,7 +23,7 @@ int main(int argc, char *argv[]) {
 	soma *=10;
 	resto =soma%11;
 	if (resto == 10) resto = 0;
-	printf("\n%d", resto);
+	printf("\nO primeiro numero da verificacao eh: %d\n", resto);
 	
 	soma = MultDigito(c1,11)+MultDigito(c2,10)+MultDigito(c3,9)+
 			MultDigito(c4,8)+MultDigito(c5,7)+MultDigito(c6,6)+
@@ -33,12 +32,13 @@ int main(int argc, char *argv[]) {
 	soma *=10;
 	resto2 =soma%11;
 	if (resto2 == 10) resto2 = 0;
-	printf("\n%d", resto2);
+	printf("O segundo numero da verificacao eh: %d\n", resto2);
 	
-	if (resto == c10 && resto2 == c11) printf("O CPF INFORMADO É VALIDO");
+	printf("\n=========================\n");
+	
+	if (resto == c10 && resto2 == c11) printf("O CPF INFORMADO EH VALIDO");
+	else printf("O CPF INFORMADO EH INVALIDO");
 			
-	
-		
-	
+			
 	return 0;
 }
