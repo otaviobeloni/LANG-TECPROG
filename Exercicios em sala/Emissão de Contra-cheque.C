@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 float calc_inss(float salario){
 	if (salario <= 1412) return salario*0.075;
@@ -20,19 +19,33 @@ float calc_irpf(float salario){
 
 int main(int argc, char *argv[]) {
 	
-	float horas, valor, salario, desconto_inss, salario_base, desconto_irpf;	
-	printf("Informe as horas trabalhadas: ");
+	float horas, valor, salario, desconto_inss, salario_base, desconto_irpf;
+	
+	printf("======================================================");
+	printf("\n               CALCULADORA DE SALARIO                ");
+	printf("\n======================================================");
+	printf("\nINFORME AS HORAS TRABALHADAS: ");
 	scanf ("%f", &horas);
-	printf("Informe o valor por hora: ");
+	printf("INFORME O VALOR POR HORA: ");
 	scanf("%f", &valor);
-	salario = horas*valor
+	salario = horas*valor;
 	
 	desconto_inss = calc_inss(salario);
 	salario_base = salario - desconto_inss;
-	printf("%f || %f", desconto_inss, calc_inss(salario));
 	
 	desconto_irpf = calc_irpf(salario_base);
-	printf("\n%f || %f", desconto_irpf, calc_irpf(salario_base));
+	
+	printf("\n======================================================");
+	printf("\n    RECIBO DE PAGAMENTO DE SALARIO (CONTRA-CHEQUE)    ");
+	printf("\n======================================================");
+	
+	printf("\nSALARIO BRUTO (HORAS X VALOR):     R$ %.2f", salario);
+	printf("\n(-) DESCONTO INSS:                 R$ %.2f", desconto_inss);
+	printf("\n(-) DESCONTO IRPF:                 R$ %.2f", desconto_irpf);
+	
+	printf("\n------------------------------------------------------");
+	printf("\nLIQUIDO A RECEBER:                 R$ %.2f", (salario - desconto_inss)-desconto_irpf);
+	printf("\n======================================================");
 	
 	
 	return 0;
