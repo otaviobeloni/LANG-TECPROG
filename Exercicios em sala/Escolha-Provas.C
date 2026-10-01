@@ -2,10 +2,15 @@
 #include <stdlib.h>
 #include <math.h>
 
-int imp5(n){
-	int valor;
-	if (valor%2 == 1 && valor%5 == 0)			
+// Função que verifica se é impar e divisivel por 5:
+int imp5(int n){
+	if (n%2 == 1 && n%5 == 0){
+		return 1;
+	}
+	return 0;		
 }
+
+// Funções para executar os exercicios da prova:
 
 void exec1(){
 	
@@ -18,8 +23,21 @@ void exec3(){
 }
 void exec4(){
 	int n1,n2,n3,n4;
-	printf("Digite os valores")
+	printf("Digite os valores com um espacamento entre eles: ");
+	scanf("%d %d %d %d",&n1,&n2,&n3,&n4);
 	
+	if (imp5(n1)){
+		printf("%d ",n1);
+	}
+	if (imp5(n2)){
+		printf("%d ",n2);
+	}
+	if (imp5(n3)){
+		printf("%d ",n3);
+	}
+	if (imp5(n4)){
+		printf("%d ",n4);
+	}	
 }
 void exec5(){
 	int cap, itens, tot;
@@ -28,9 +46,9 @@ void exec5(){
 	printf("Quantos itens voce tem?: ");
 	scanf("%d", &itens);
 	
-	tot = cap/itens;
+	tot = itens/cap;
 	
-	printf("O total de mochilas preenchidas ficou em: %d", tot);
+	printf("O total de mochilas preenchidas totalmente ficou em: %d", tot);
 }
 void exec6(){
 	
@@ -44,8 +62,6 @@ void exec8(){
 void exec9(){
 	
 }
-
-
 
 int main(int argc, char *argv[]) {
 	
