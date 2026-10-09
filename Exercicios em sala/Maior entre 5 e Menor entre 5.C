@@ -1,11 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int compara(int a, int b){
-	if (a<b) return b;
-	else return a;
-}
-
 int main(int argc, char *argv[]) {
     
     int numero[10], i;
@@ -16,17 +11,20 @@ int main(int argc, char *argv[]) {
         scanf("%d", &numero[i]);
     }
       
-    for(i = 1, maior = numero[0]; i< 5; i+=2) {
-    	int temp = compara(numero[i], numero[i+1]);
-    	maior = compara(maior, temp);
+    maior = numero[0];
+    
+    for(i = 1; i< 5; i++) {
+    	if (numero[i] > maior)
+		maior = numero[i];
     }
     
-    for(i = 1, menor = numero[5]; i< 10; i+=2) {
-    	int temp = compara(numero[i], numero[i+1]);
-    	menor = compara(menor, temp);
+    menor = numero[5];
+    
+    for(i = 6; i< 10; i++) {
+    	if (numero[i] < menor)
+		menor = numero[i];
     }
 
-    
     printf("O maior entre os 5 primeiros eh: %d\n", maior);
     printf("O menor entre os 5 ultimos eh: %d\n", menor);
     
