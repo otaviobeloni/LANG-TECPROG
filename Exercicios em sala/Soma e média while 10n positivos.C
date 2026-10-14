@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) {
     media = soma/10;
 
     printf("\nA soma dos valores positivos digitados foi de: %d", soma);
-    printf("\nA media dos valores positivos eh de: %.2f\n", media);
+    printf("\nA media dos valores positivos eh de: %f", media);
 
     return 0;
 }
